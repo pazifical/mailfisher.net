@@ -4,9 +4,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>MailFisher</title>
+    <title>mailfisher.net</title>
+    <style>
+      :root {
+        --bright: hsl(25, 20%, 95%);
+        --blue-light: #0098f5;
+        --blue-mid: #007dca;
+        --blue-dark: #003e64;
+        --blue-dark-2: #2b3133;
+        --dark: #332922;
+      }
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        color: var(--dark);
+      }
+      main {
+        max-width: 1200px;
+        margin: auto;
+      }
+      nav {
+        padding: 0.5rem 1rem;
+        border-radius: 0 0 1rem 1rem;
+        background-color: var(--bright);
+
+        h1 {
+          font-style: italic;
+          font-size: 1.5rem;
+          font-weight: bold;
+          letter-spacing: 0.075rem;
+          text-align: center;
+        }
+      }
+      #sky {
+        background: radial-gradient(var(--blue-light), var(--blue-mid));
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: -10;
+      }
+      #sea {
+        background: linear-gradient(var(--blue-mid), var(--blue-dark));
+        position: fixed;
+        height: 50vh;
+        top: 70vh;
+        left: 0;
+        width: 100vw;
+        z-index: -9;
+      }
+      #floor {
+        background: var(--dark);
+        position: fixed;
+        height: 2rem;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        z-index: -8;
+      }
+      #boat {
+        position: fixed;
+        bottom: 30vh;
+        left: 50vw;
+        width: 4rem;
+        height: 2rem;
+        z-index: -1;
+      }
+      #boat-center {
+        width: 4rem;
+        height: 2rem;
+        background-color: var(--dark);
+      }
+      #boat-bottom {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      #boat-right {
+        width: 4rem;
+        height: 2rem;
+        border-radius: 0 0 1rem 0;
+        background-color: var(--dark);
+      }
+      #boat-left {
+        width: 4rem;
+        height: 2rem;
+        border-radius: 0 0 0 1rem;
+        background-color: var(--dark);
+      }
+      #info-area {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        gap: 1rem;
+
+        div {
+          background-color: var(--bright);
+          padding: 1rem;
+          border-radius: 3rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>MailFisher</h1>
+    <div id="sea"></div>
+    <div id="sky"></div>
+    <div id="floor">
+      <div style="position: relative; color: white; padding: 0.5rem 1rem">
+        <main>mailfisher.net</main>
+      </div>
+    </div>
+    <div id="boat">
+      <div id="boat-bottom">
+        <div id="boat-left"></div>
+        <div id="boat-center"></div>
+        <div id="boat-right"></div>
+      </div>
+    </div>
+    <main>
+      <nav>
+        <h1>mailfisher.net</h1>
+      </nav>
+    </main>
   </body>
 </html>
